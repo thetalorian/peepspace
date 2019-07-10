@@ -8,3 +8,10 @@ Run terraform init, plan, and apply.
 
 Access through kubectl with the following command:
 aws eks update-kubeconfig --name terraform-eks-demo
+
+
+For reference and reminder, the work presented here is based on the tutorials at:
+https://learn.hashicorp.com/terraform/aws/eks-intro and
+https://medium.com/@alex.veprik/setting-up-aws-eks-cluster-entirely-with-terraform-e90f50ab7387
+
+(at least initially)
