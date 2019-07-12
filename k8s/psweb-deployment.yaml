@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ps-web-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ps-web
+  template:
+    metadata:
+      labels:
+        app: ps-web
+    spec:
+      containers:
+      - name: ps-web
+        #image: thetalorian/peepspace-web
+        image: tomcat:8.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080

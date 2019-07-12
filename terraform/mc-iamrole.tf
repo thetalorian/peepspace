@@ -1,19 +1,23 @@
+data "aws_iam_policy_document" "clusterrolepolicy" {
+  statement {
+    effect =  "Allow"
+
+    actions = ["sts:AssumeRole"]
+    
+    principals {
+      type = "Service"
+      identifiers = ["eks.amazonaws.com"]
+    }
+  }
+}
+
+output "clusterrole_role_policy" {
+  value = "${data.aws_iam_policy_document.clusterrolepolicy.json}"
+}
+
 resource "aws_iam_role" "demo-cluster" {
     name = "terraform-eks-demo-cluster"
-    assume_role_policy = <<POLICY
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "eks.amazonaws.com"
-      },
-      "Action": "sts:AssumeRole"
-    }
-  ]
-}
-POLICY
+    assume_role_policy = "${data.aws_iam_policy_document.clusterrolepolicy.json}"
 }
 
 resource "aws_iam_role_policy_attachment" "demo-cluster-AmazonEKSClusterPolicy" {

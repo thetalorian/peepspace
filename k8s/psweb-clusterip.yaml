@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: psweb-clusterip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: ps-web
+  ports:
+  - port: 8080
+    targetPort: 8080
