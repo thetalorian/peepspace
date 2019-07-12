@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ps-web-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: ps-web
