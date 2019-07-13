@@ -1,9 +1,6 @@
-module "atest" {
-    source = "./modules/tester"
-    sg_description = "lava"
-}
-
-module "atest2" {
-    source = "./modules/tester"
-    sg_description = "water"
+module "eks" {
+    source = "./modules/eks"
+    cluster-name = "peepspace"
+    subnetcount = "2"
+    wsip = "75.84.153.131"
 }
