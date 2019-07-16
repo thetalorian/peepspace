@@ -5,6 +5,10 @@ module "eks" {
     wsip = "12.25.175.47"
 }
 
+module "sg" {
+    description = "SPIKES!"
+}
+
 resource "aws_security_group" "tester" {
     name = "LAVA"
     description = "The floor is LAVA!!"
