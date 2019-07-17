@@ -1,0 +1,3 @@
+variable "description" {
+  type = "string"
+}
