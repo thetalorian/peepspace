@@ -7,6 +7,7 @@ module "eks" {
 
 module "sg" {
     description = "SPIKES!"
+    source = "../modules/sg"
 }
 
 resource "aws_security_group" "tester" {
