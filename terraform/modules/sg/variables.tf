@@ -1,3 +1,3 @@
-variable "sg_description" {
+variable "description" {
   type = "string"
 }
